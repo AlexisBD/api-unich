@@ -19,7 +19,7 @@ from .views.puesto import (PuestoList, PuestoDetails,
 from .views.materia import MateriaList, MateriaDetails
 from .views.eje import EjeList, EjeDetails 
 from .views.plan import PlanList, PlanDetails                            
-from .views.plan_materias import PlanMateriaList, PlanMateriaDetails 
+from .views.planes_materias import PlanMateriaList, PlanMateriaDetails 
 
 urlpatterns = [  # pk -> id
     path('personas/', PersonaList.as_view()),

@@ -1,13 +1,15 @@
  
 from rest_framework import serializers
 
+from ..models.planes_materias import PlanMateria
 from ..models.plan import Plan
 from ..models.carrera import Carrera
 from ..models.eje import Eje
+from ..models.materia import Materia
 
 class PlanMateriaListSerializer(serializers.ModelSerializer):
     """ Serializer para listar todos Planes-Materias. """
-     class Meta:
+    class Meta:
         model = PlanMateria
         fields = [
             'id', 'clave', 'eje_id', 'semestre', 'creditos',            

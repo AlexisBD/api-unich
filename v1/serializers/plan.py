@@ -6,7 +6,7 @@ from ..models.carrera import Carrera
 
 class PlanListSerializer(serializers.ModelSerializer):
     """ Serializer para listar todos los Planes. """
-     class Meta:
+    class Meta:
         model = Plan
         fields = [
             'id', 'rvoe', 'descripcion', 'modular', 'ano', 'duracion',            

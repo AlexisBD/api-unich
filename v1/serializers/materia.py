@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..model.materia import Materia
+from ..models.materia import Materia
 
 class MateriaListSerializer(serializers.ModelSerializer):
     """ Serializer para mostrar datos de las Materias. """
