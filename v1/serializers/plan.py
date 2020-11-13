@@ -4,22 +4,25 @@ from rest_framework import serializers
 from ..models.plan import Plan
 from ..models.carrera import Carrera
 
+
+from .carrera import CarreraListSerializer
+from .planes_materias import PlanMateriaReducedSerializer
+
 class PlanListSerializer(serializers.ModelSerializer):
     """ Serializer para listar todos los Planes. """
-     class Meta:
+    materia = PlanMateriaReducedSerializer(source="planmateria_set", many=True)
+    class Meta:
         model = Plan
         fields = [
-            'id', 'rvoe', 'descripcion', 'modular', 'ano', 'duracion',            
-        ] 
+            'id', 'rvoe', 'descripcion', 'modular', 'ano', 'duracion',
+            'materia',          
+        ]
         # Todo de materias
 
 
 class PlanCreateSerializer(serializers.ModelSerializer):
     """ Serializer para crear y actualizar un Plan. """
-    carrera = serializers.PrimaryKeyRelatedField(
-        queryset=Carrera.objects.all(),
-        source='carrera',
-    )
+    # carrera = CarreraListSerializer(source='carrera_set', many=True)
     class Meta:
         model = Plan
         fields = [

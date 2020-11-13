@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..model.eje import Eje
+from ..models.eje import Eje
 
 class EjeListSerializer(serializers.ModelSerializer):
     """ Serializer para mostrar datos de Ejes. """

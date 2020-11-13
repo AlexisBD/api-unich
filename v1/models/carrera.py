@@ -26,3 +26,6 @@ class Carrera(TimestampMixin):
         on_delete=models.CASCADE,
         related_name='carreras',
     )
+
+    def __str__(self):
+        return self.nombre

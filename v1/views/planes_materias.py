@@ -1,8 +1,8 @@
  
 from rest_framework import generics
 
-from ..models.planes_materia import PlanMateria
-from ..serializers.planes_materia import (PlanMateriaListSerializer,
+from ..models.planes_materias import PlanMateria
+from ..serializers.planes_materias import (PlanMateriaListSerializer,
                                    PlanMateriaCreateSerializer,
                                    PlanMateriaRetrieveSerializer)
 
