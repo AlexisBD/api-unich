@@ -1,11 +1,13 @@
  
 from rest_framework import serializers
 
+from ..models.planes_materias import PlanMateria
 from ..models.plan import Plan
 from ..models.planes_materias import PlanMateria
 from ..models.carrera import Carrera
 from ..models.materia import Materia
 from ..models.eje import Eje
+from ..models.materia import Materia
 
 
 from .materia import MateriaListSerializer
@@ -25,18 +27,6 @@ class PlanMateriaListSerializer(serializers.ModelSerializer):
 
 class PlanMateriaCreateSerializer(serializers.ModelSerializer):
     """ Serializer para crear y actualizar un Planes-Materias. """
-    # materia = serializers.PrimaryKeyRelatedField(
-    #     queryset=Materia.objects.all(),
-    #     source='materia',
-    # )
-    # eje = serializers.PrimaryKeyRelatedField(
-    #     queryset=Eje.objects.all(),
-    #     source='eje',
-    # )
-    # plan = serializers.PrimaryKeyRelatedField(
-    #     queryset=Plan.objects.all(),
-    #     source='plan',
-    # )
     class Meta:
         model = PlanMateria
         fields = [
